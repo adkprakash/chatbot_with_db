@@ -1,5 +1,8 @@
 langchain
 langchain-community
-llama-cpp-python
+mysql-connector-python
+mysqlclient
 sqlalchemy
 python-dotenv
+pymysql
+cryptography

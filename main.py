@@ -1,7 +1,9 @@
-from .chatbot import SQLChatBot
+from chatbot import SQLChatBot
 from langchain_community.llms import Ollama
+from database import DatabaseManager
 
 if __name__ == "__main__":
+    db_uri = "mysql+pymysql://root:prakash@localhost:3306/Chinook"
     model_config = {
         "model": "llama3",
         "temperature": 0.2,
@@ -11,8 +13,5 @@ if __name__ == "__main__":
         "verbose": False
     }
 
-    chatbot = SQLChatBot(
-        db_uri=f"sqlite:///{database}",
-        model_config=model_config
-    )
+    chatbot = SQLChatBot(db_uri=db_uri, model_config=model_config)  
     chatbot.run()
